@@ -1,6 +1,6 @@
 from scapy.all import *
 
-class UnicomReceiver:
+class ESP8266Receiver:
     def __init__(self, mon_interface, receiver_name, receive_callback):
         self.receiver_id = self.generate_id(receiver_name)
         self.receive_callback = receive_callback

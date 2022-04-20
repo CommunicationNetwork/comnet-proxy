@@ -1,5 +1,5 @@
 import socket
-from unicom.unicom_receiver import UnicomReceiver
+from receivers.esp8266_receiver import ESP8266Receiver
 
 backend_connected = False
 
@@ -29,7 +29,7 @@ def send_callback(data, backend):
         backend_connected = False
         
 def main():
-    receiver = UnicomReceiver("wlp4s0mon", "receiver", send_callback)
+    receiver = ESP8266Receiver("wlp4s0mon", "receiver", send_callback)
     proxy = ProxyServer("localhost", 5000, receiver)
     proxy.start()
 
